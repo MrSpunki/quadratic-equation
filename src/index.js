@@ -4,10 +4,10 @@ module.exports = function solveEquation(equation) {
     var roots = [];
   
   var parts = equation.split(" ");
-  //console.log(parts);
+  console.log(parts);
   
   var discriminant = parts[4] * parts[4] - 4 * parts[0] * parts[8];
-  //console.log("discriminant " + discriminant);
+  console.log("discriminant " + discriminant);
   
   if (discriminant === 0){
     var x = Math.round((-1*parts[4])/(2*parts[0]));
@@ -23,5 +23,6 @@ module.exports = function solveEquation(equation) {
   }
   
   roots.sort();
-  //console.log("roots " + roots);
+  console.log("roots " + roots);
+  return (roots);
 }
