@@ -1,28 +1,26 @@
 module.exports = function solveEquation(equation) {
-  // your implementation
   
-    var roots = [];
-  
+  var roots = [];
   var parts = equation.split(" ");
-  console.log(parts);
   
-  var discriminant = parts[4] * parts[4] - 4 * parts[0] * parts[8];
-  console.log("discriminant " + discriminant);
+  var a = parts[0];
+  var b = parts[3] + parts[4];
+  var c = parts[7] + parts[8];
+  
+  var discriminant = b * b - 4 * a * c;
   
   if (discriminant === 0){
-    var x = Math.round((-1*parts[4])/(2*parts[0]));
+    var x = Math.round((-1*b)/(2*a));
     roots.push(x);
     
   }else if (discriminant > 0) {
-    var x1 = Math.round((-1*parts[4]+Math.sqrt(discriminant))/(2*parts[0]));
-    var x2 = Math.round((-1*parts[4]-Math.sqrt(discriminant))/(2*parts[0]));
+    var x1 = Math.round((-1 * b + Math.sqrt(discriminant))/(2 * a));
+    var x2 = Math.round((-1 * b - Math.sqrt(discriminant))/(2 * a));
     roots.push(x1,x2);
     
   }else {
     roots.push(0);
   }
   
-  roots.sort();
-  console.log("roots " + roots);
-  return (roots);
+  return roots.sort();
 }
