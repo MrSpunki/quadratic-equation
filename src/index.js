@@ -9,18 +9,11 @@ module.exports = function solveEquation(equation) {
   
   var discriminant = b * b - 4 * a * c;
   
-  if (discriminant === 0){
-    var x = Math.round((-1*b)/(2*a));
-    roots.push(x);
-    roots.push(x);
-    
-  }else if (discriminant > 0) {
+  if (discriminant > 0) {
     var x1 = Math.round((-1 * b + Math.sqrt(discriminant))/(2 * a));
     var x2 = Math.round((-1 * b - Math.sqrt(discriminant))/(2 * a));
     roots.push(x1,x2);
     
-  }else {
-    roots.push(0);
   }
   
   return roots.sort();
