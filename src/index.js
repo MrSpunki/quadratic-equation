@@ -12,9 +12,12 @@ module.exports = function solveEquation(equation) {
   if (discriminant > 0) {
     var x1 = Math.round((-1 * b + Math.sqrt(discriminant))/(2 * a));
     var x2 = Math.round((-1 * b - Math.sqrt(discriminant))/(2 * a));
-    roots.push(x1,x2);
-    
+    roots.push(x1,x2);    
   }
+  
+  roots.sort(function(a, b) {
+    return a - b;
+  });
   
   return roots.sort();
 }
